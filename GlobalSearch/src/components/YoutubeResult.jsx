@@ -2,6 +2,7 @@ import React from 'react';
 
 const YoutubeResult = (props)=>{
 
+    console.log(props.prevPageToken)
     const handleOrderChange = (event)=>{
         props.handleSearch("", "", event.target.value);
     }
@@ -9,11 +10,11 @@ const YoutubeResult = (props)=>{
     return (
         <div className="youtubeResultDiv">
             <div>
-                <button onClick={()=>{props.handleSearch(props.prevPageToken, "")}}>Prev</button>
+                <button disabled={props.prevPageToken == undefined} onClick={()=>{props.handleSearch(props.prevPageToken, "")}} data={props.prevPageToken}>Prev</button>
                 &nbsp;&nbsp;
                 <button onClick={()=>{props.handleSearch("", props.nextPageToken)}}>Next</button>
                 &nbsp;&nbsp;
-                <select onChange={handleOrderChange}>
+                <select onChange={handleOrderChange} className="youtubeFilterDropdown">
                     <option value="">Filters</option>
                     <option value="date">Date</option>
                     <option value="viewCount">View Count</option>

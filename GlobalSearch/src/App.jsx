@@ -28,7 +28,6 @@ const App = ()=> {
     }
 
 
-
     const handleYoutubeSearch = async(prevPageToken, nextPageToken, order)=>{
 
         prevPageToken = prevPageToken || "";
@@ -56,13 +55,8 @@ const App = ()=> {
                 params["pageToken"] = prevPageToken;
             }
 
-            console.log(params);
-
-
             const response = await axios.get(API_URL+"api/youtubeSearch", {
-                params: {
-                    search: search
-                }
+                params: params
             });
             
             setLoading(false);

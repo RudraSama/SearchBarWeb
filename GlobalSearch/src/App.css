@@ -61,14 +61,18 @@ body{
     background-color: #0077b6;
 }
 
+.resultDiv{
+    margin-top: 2em;
+}
+
 .youtubeResultDiv>div:nth-child(2),
 .blogResultDiv>div:nth-child(2),
 .researchArticleResultDiv>div:nth-child(2){
-    height: 80vh;
+    height: 60vh;
+    overflow: auto;
     display: flex;
     flex-direction: column;
     gap: 1.25em;
-    overflow: auto;
     margin-top: 1.25em;
 }
 
@@ -77,6 +81,11 @@ body{
     gap: 1.25em;
     align-items: center;
 }
+
+.youtubeTile:hover{
+    cursor: pointer;
+}
+
 .youtubeTile img{
     width: 6.25em;
 }
@@ -110,6 +119,15 @@ body{
 .blogResultTile a:hover,
 .researchArticleResultTile a:hover{
     color: white;
+}
+
+
+.youtubeFilterDropdown{
+    width: 10em;
+    padding: 1em;
+    background-color: #22577a;
+    border: none;
+    border-radius: 5px;
 }
 
 
