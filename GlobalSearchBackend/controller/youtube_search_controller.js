@@ -18,7 +18,6 @@ const getYoutubeSearchResult = async(req, res)=>{
         const pageToken = req.query.pageToken;
         const order = req.query.order;
 
-        console.log(pageToken);
 
         const options = {
             part: "snippet",
